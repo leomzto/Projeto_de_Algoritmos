@@ -1,0 +1,17 @@
+# Configurações do CLion
+.idea/
+
+# Arquivos de compilação do CMake
+cmake-build-*/
+
+# Ambiente virtual Python
+.venv/
+
+# Executáveis e arquivos objeto
+*.exe
+*.o
+*.obj
+
+# Arquivos temporários
+*.tmp
+*.log
