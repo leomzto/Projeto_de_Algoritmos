@@ -1,7 +1,10 @@
 #include "utils/menu.hpp"
 
-#include "algoritmos/insertion_sort.hpp"
 #include <iostream>
+
+#include "utils/executar.hpp"
+#include "utils/caminhos.hpp"
+#include "utils/algoritmos.hpp"
 
 using namespace std;
 
@@ -72,6 +75,9 @@ void executarMenu()
         cout << "       PROJETO DE ALGORITMOS\n";
         cout << "====================================\n";
         cout << "1. Executar Insertion Sort\n";
+        cout << "2. Executar Bubble Sort\n";
+        cout << "3. Executar Selection Sort\n";
+       //cout << "4. Executar Shell Sort\n";
         cout << "0. Sair\n";
         cout << "Escolha uma opcao: ";
 
@@ -79,7 +85,25 @@ void executarMenu()
 
         switch (opcao) {
             case 1:
-                executarInsertionSort();
+                executarAlgoritmo(insertionSort,"Insertion Sort",
+                    CAMINHO_INSERTION,CSV_INSERTION);
+                break;
+
+            case 2:
+                executarAlgoritmo(bubbleSort,"Bubble Sort",
+                    CAMINHO_BUBBLE,CSV_BUBBLE);
+                break;
+
+            case 3:
+                executarAlgoritmo(selectionSort,"Selection Sort",
+                    CAMINHO_SELECTION,CSV_SELECTION);
+                break;
+
+            case 4:
+                /*
+                executarAlgoritmo(shellSort,"Shell Sort",
+                                CAMINHO_SHELL,CSV_SHELL);
+                */
                 break;
 
             case 0:

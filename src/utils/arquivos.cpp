@@ -1,11 +1,11 @@
 #include "utils/arquivos.hpp"
+
 #include <fstream>
 #include <iostream>
-#include <filesystem>
 
 using namespace std;
 
-void salvarVetor(const char* nomeArquivo, int* vetor, int tamanho) {
+void salvarVetor(const string& nomeArquivo, int* vetor, int tamanho) {
     // cria e abre um arquivo para escrita
     ofstream arquivo(nomeArquivo);
 
@@ -27,7 +27,7 @@ void salvarVetor(const char* nomeArquivo, int* vetor, int tamanho) {
     arquivo.close();
 }
 
-void salvarTempo(const char* nomeArquivo, int tamanho, double tempo) {
+void salvarTempo(const string& nomeArquivo, int tamanho, double tempo) {
 
     // cria e abre um arquivo para escrita
     ofstream arquivo(nomeArquivo);
@@ -71,4 +71,15 @@ void salvarCSV(const string& caminho, int tamanho, const string& tipo, double te
 
     // fecha o arquivo
     arquivo.close();
+}
+
+void criarDiretorios(const string& caminhoEntrada, const string& caminhoSaida,
+                    const string& caminhoTempo, const string& nomeInstancia) {
+
+    namespace fs = filesystem;
+
+    fs::create_directories(caminhoEntrada + "/" + nomeInstancia);
+    fs::create_directories(caminhoSaida + "/" + nomeInstancia);
+    fs::create_directories(caminhoTempo + "/" + nomeInstancia);
+    fs::create_directories("Algoritmos/Tempos");
 }
