@@ -15,7 +15,7 @@ add_executable(Projeto_de_Algoritimo
         src/algoritmos/insertion_sort.cpp
         src/algoritmos/bubble_sort.cpp
         src/algoritmos/selection_sort.cpp
-        # src/algoritmos/shell_sort.cpp
+        src/algoritmos/shell_sort.cpp
 
         # utils
         src/utils/arquivos.cpp
@@ -23,8 +23,6 @@ add_executable(Projeto_de_Algoritimo
         src/utils/menu.cpp
         src/utils/tempo.cpp
         src/utils/executar.cpp
-        src/algoritmos/shell_sort.cpp
-        include/algoritmos/shell_sort.hpp
 )
 
 # .hpp's
