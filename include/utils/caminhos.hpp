@@ -5,10 +5,12 @@
 #define CAMINHO_BUBBLE "Algoritmos/Bubble Sort/"
 #define CAMINHO_SELECTION "Algoritmos/Selection Sort/"
 #define CAMINHO_SHELL "Algoritmos/Shell Sort/"
+//#define CAMINHO_MERGE "Algoritmos/Merge Sort"
 
 #define CSV_INSERTION "Extras/Tempos/insertion_sort.csv"
 #define CSV_BUBBLE "Extras/Tempos/bubble_sort.csv"
 #define CSV_SELECTION "Extras/Tempos/selection_sort.csv"
 #define CSV_SHELL "Extras/Tempos/shell_sort.csv"
+//#define CSV_MERGE "Extras/Tempos/merge_sort.csv"
 
 #endif

@@ -1,10 +1,9 @@
 #include "utils/tempo.hpp"
 #include <chrono>
-#include <filesystem>
 
 using namespace std;
 
-// (*algoritimo) -> ponteiro para a funçao, deixa passar ela como parametro
+// function<void(int*, int)> algoritmo : função que recebe um vetor e seu tamanho
 double calcularTempo(void (*algoritmo)(int*, int), int* vetor, int tamanho) {
     // salvar tempo do inicio
     auto inicio = chrono::steady_clock::now();

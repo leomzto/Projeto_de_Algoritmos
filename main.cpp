@@ -4,7 +4,6 @@
 #include <ctime>
 
 int main() {
-    // semente de aleatoriedade para o rand()
     srand(time(nullptr));
 
     executarMenu();

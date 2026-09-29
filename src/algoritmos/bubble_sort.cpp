@@ -11,6 +11,7 @@ void bubbleSort(int* vetor, int tamanho) {
                 int temp = vetor[j];
                 vetor[j] = vetor[j + 1];
                 vetor[j + 1] = temp;
+
                 trocou = true; // marca como trocado
             }
         }

@@ -81,5 +81,5 @@ void criarDiretorios(const string& caminhoEntrada, const string& caminhoSaida,
     fs::create_directories(caminhoEntrada + "/" + nomeInstancia);
     fs::create_directories(caminhoSaida + "/" + nomeInstancia);
     fs::create_directories(caminhoTempo + "/" + nomeInstancia);
-    fs::create_directories("Algoritmos/Tempos");
+    fs::create_directories("Extras/Tempos");
 }

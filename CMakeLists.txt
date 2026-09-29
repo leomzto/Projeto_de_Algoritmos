@@ -23,6 +23,8 @@ add_executable(Projeto_de_Algoritimo
         src/utils/menu.cpp
         src/utils/tempo.cpp
         src/utils/executar.cpp
+        src/algoritmos/shell_sort.cpp
+        include/algoritmos/shell_sort.hpp
 )
 
 # .hpp's

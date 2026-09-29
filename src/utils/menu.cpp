@@ -77,7 +77,7 @@ void executarMenu()
         cout << "1. Executar Insertion Sort\n";
         cout << "2. Executar Bubble Sort\n";
         cout << "3. Executar Selection Sort\n";
-       //cout << "4. Executar Shell Sort\n";
+        cout << "4. Executar Shell Sort\n";
         cout << "0. Sair\n";
         cout << "Escolha uma opcao: ";
 
@@ -99,12 +99,39 @@ void executarMenu()
                     CAMINHO_SELECTION,CSV_SELECTION);
                 break;
 
-            case 4:
+            case 4: {
                 /*
-                executarAlgoritmo(shellSort,"Shell Sort",
-                                CAMINHO_SHELL,CSV_SHELL);
+                char op;
+                int divisor = 2;
+
+                cout <<  "Deseja informar o divisor do gap (gap padrão = 2). S / N";
+                cin >> op;
+
+                switch (tolower(op)) {
+                    case 's':
+                        cout << "Digite o divisor do gap (padrao = 2): ";
+                        cin >> divisor;
+                        break;
+
+                    case 'n':
+                        cout << "Usando divisor do gap padrao (2).";
+                        break;
+
+                    default:
+                        cout << "Opcao invalida. Usando divisor padrao = 2.\n";
+                        break;
+                }
+
+                cout << "Executando Shell Sort com divisor do gap: " << divisor;
                 */
+
+                // lambda para passar o divisor do gap como parametro
+                // [ divisor ] ... { shellSort(vetor, tamanho, divisor); } // [] é a captura
+                executarAlgoritmo([](int* vetor, int tamanho) { shellSort(vetor, tamanho, 2); }, "Shell Sort",
+                                                                                CAMINHO_SHELL, CSV_SHELL);
+
                 break;
+            }
 
             case 0:
                 cout << "\nEncerrando programa...\n";

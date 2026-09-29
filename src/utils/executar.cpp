@@ -2,13 +2,13 @@
 #include "utils/gerador.hpp"
 #include "utils/arquivos.hpp"
 #include "utils/tempo.hpp"
+
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 void executarAlgoritmo(void (*algoritmo)(int*, int), const string& nomeAlgoritmo,
-                        const string& caminhoBase, const string& caminhoCSV) {
+                              const string& caminhoBase, const string& caminhoCSV) {
 
     int tipo = escolherTipoInstancia();
     int tamanho = escolherTamanhoInstancia();
@@ -21,36 +21,31 @@ void executarAlgoritmo(void (*algoritmo)(int*, int), const string& nomeAlgoritmo
         return;
     }
 
-    string nomeInstancia = obterNomeInstancia(tipo);
-    string nomeArquivo = nomeInstancia + "_" + to_string(tamanho) + ".txt";
+    const string nomeInstancia = obterNomeInstancia(tipo);
+    const string nomeArquivo = nomeInstancia + "_" + to_string(tamanho) + ".txt";
 
-    string caminhoEntradaBase = caminhoBase + "Arquivos de Entrada/";
-    string caminhoSaidaBase = caminhoBase + "Arquivos de Saida/";
-    string caminhoTempoBase = caminhoBase + "Arquivos de Tempo/";
+    const string caminhoEntradaBase = caminhoBase + "Arquivos de Entrada/";
+    const string caminhoSaidaBase = caminhoBase + "Arquivos de Saida/";
+    const string caminhoTempoBase = caminhoBase + "Arquivos de Tempo/";
 
-    criarDiretorios(caminhoEntradaBase.c_str(),caminhoSaidaBase.c_str(),
-                    caminhoTempoBase.c_str(), nomeInstancia);
+    criarDiretorios(caminhoEntradaBase, caminhoSaidaBase,
+                    caminhoTempoBase, nomeInstancia);
 
-    string caminhoEntrada =
-        caminhoEntradaBase + nomeInstancia + "/" + nomeArquivo;
-
-    string caminhoSaida =
-        caminhoSaidaBase + nomeInstancia + "/" + nomeArquivo;
-
-    string caminhoTempo =
-        caminhoTempoBase + nomeInstancia + "/" + nomeArquivo;
+    const string caminhoEntrada = caminhoEntradaBase + nomeInstancia + "/" + nomeArquivo;
+    const string caminhoSaida = caminhoSaidaBase + nomeInstancia + "/" + nomeArquivo;
+    const string caminhoTempo = caminhoTempoBase + nomeInstancia + "/" + nomeArquivo;
 
     cout << "Salvando instancia de Arquivos de Entrada...\n";
-    salvarVetor(caminhoEntrada.c_str(), vetor, tamanho);
+    salvarVetor(caminhoEntrada, vetor, tamanho);
 
     cout << "Executando " << nomeAlgoritmo << "...\n";
     double tempo = calcularTempo(algoritmo, vetor, tamanho);
 
-    cout << "Salvando resultado...\n";
-    salvarVetor(caminhoSaida.c_str(), vetor, tamanho);
+    cout << "Salvando instancia de Arquivos de Saida...\n";
+    salvarVetor(caminhoSaida, vetor, tamanho);
 
     cout << "Salvando Arquivos de Tempo...\n";
-    salvarTempo(caminhoTempo.c_str(), tamanho, tempo);
+    salvarTempo(caminhoTempo, tamanho, tempo);
     salvarCSV(caminhoCSV, tamanho, nomeInstancia, tempo);
 
     cout << "\n===== EXECUCAO CONCLUIDA =====\n";
@@ -63,6 +58,7 @@ void executarAlgoritmo(void (*algoritmo)(int*, int), const string& nomeAlgoritmo
     cout << "Entrada: " << caminhoEntrada << "\n";
     cout << "Saida:   " << caminhoSaida << "\n";
     cout << "Tempo:   " << caminhoTempo << "\n";
+    cout << "CSV:     " << caminhoCSV << "\n";
 
     delete[] vetor;
 }
