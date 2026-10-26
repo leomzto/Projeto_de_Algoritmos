@@ -25,14 +25,16 @@ algoritmos = [
     "insertion_sort",
     "bubble_sort",
     "selection_sort",
-    "shell_sort"
+    "shell_sort",
+    "merge_sort"
 ]
 
 nomes_algoritmos = {
     "insertion_sort": "Insertion Sort",
     "bubble_sort": "Bubble Sort",
     "selection_sort": "Selection Sort",
-    "shell_sort": "Shell Sort"
+    "shell_sort": "Shell Sort",
+    "merge_sort": "Merge Sort"
 }
 
 
