@@ -5,7 +5,6 @@
 
 int main() {
     srand(time(nullptr));
-
     executarMenu();
 
     return 0;
