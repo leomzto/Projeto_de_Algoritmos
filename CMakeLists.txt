@@ -23,6 +23,7 @@ add_executable(Projeto_de_Algoritimo
         src/utils/menu.cpp
         src/utils/tempo.cpp
         src/utils/executar.cpp
+        src/algoritmos/merge_sort.cpp
 )
 
 # .hpp's
