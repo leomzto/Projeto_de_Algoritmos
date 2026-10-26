@@ -5,5 +5,6 @@
 #include "algoritmos/bubble_sort.hpp"
 #include "algoritmos/selection_sort.hpp"
 #include "algoritmos/shell_sort.hpp"
+#include "algoritmos/merge_sort.hpp"
 
 #endif

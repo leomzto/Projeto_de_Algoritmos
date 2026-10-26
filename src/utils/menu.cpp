@@ -78,6 +78,7 @@ void executarMenu()
         cout << "2. Executar Bubble Sort\n";
         cout << "3. Executar Selection Sort\n";
         cout << "4. Executar Shell Sort\n";
+        cout << "5. Executar Merge Sort\n";
         cout << "0. Sair\n";
         cout << "Escolha uma opcao: ";
 
@@ -132,6 +133,12 @@ void executarMenu()
 
                 break;
             }
+
+            case 5:
+                // lambda para a chamada com apenas 2 parametros, sem esq e dir
+                executarAlgoritmo([](int* vetor, int tamanho) { mergeSort(vetor, tamanho); }, "Merge Sort",
+                                                                                CAMINHO_MERGE,CSV_MERGE);
+                break;
 
             case 0:
                 cout << "\nEncerrando programa...\n";
